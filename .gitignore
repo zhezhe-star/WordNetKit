@@ -1,0 +1,8 @@
+.build/
+.swiftpm/
+DerivedData/
+*.xcodeproj
+.DS_Store
+
+# Source data for the converter — the generated SQLite is committed instead.
+Tools/data/

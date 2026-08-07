@@ -1,0 +1,32 @@
+WordNetKit
+==========
+
+The library code in this repository is licensed under the MIT License; see LICENSE.
+
+Bundled data
+------------
+
+Sources/WordNetKit/Resources/wordnet.sqlite is generated from:
+
+    Open English WordNet 2025
+    https://github.com/globalwordnet/english-wordnet
+    Licensed under the Creative Commons Attribution 4.0 International licence
+    https://creativecommons.org/licenses/by/4.0/
+
+CC BY 4.0 requires attribution. Any application shipping this package must
+credit Open English WordNet somewhere visible to users — an about screen,
+settings pane, or acknowledgements list is customary.
+
+The package provides the credit line for you:
+
+    let metadata = try await WordNet.shared.metadata()
+    print(metadata.attribution)
+    // Open English Wordnet 2025, licensed under CC BY 4.0
+
+Open English WordNet derives from Princeton WordNet 3.0:
+
+    Princeton University "About WordNet." WordNet. Princeton University. 2010.
+    https://wordnet.princeton.edu/
+
+No changes were made to the meaning of the data. It was converted from the
+WN-LMF XML distribution into SQLite by Tools/build_db.py.
