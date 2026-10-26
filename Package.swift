@@ -12,18 +12,23 @@ let package = Package(
         .visionOS(.v1),
     ],
     products: [
-        .library(name: "WordNetKit", type: .dynamic, targets: ["WordNetKit"])
+        .library(name: "WordNetKit", type: .dynamic, targets: ["WordNetKit"]),
+        .library(name: "WordNetKitData", type: .static, targets: ["WordNetKitData"]),
     ],
     targets: [
         .target(
             name: "WordNetKit",
-            resources: [.copy("Resources/wordnet.sqlite")],
             swiftSettings: [.swiftLanguageMode(.v6)],
             linkerSettings: [.linkedLibrary("sqlite3")]
         ),
+        .target(
+            name: "WordNetKitData",
+            resources: [.copy("Resources/wordnet.sqlite")],
+            swiftSettings: [.swiftLanguageMode(.v6)]
+        ),
         .testTarget(
             name: "WordNetKitTests",
-            dependencies: ["WordNetKit"],
+            dependencies: ["WordNetKit", "WordNetKitData"],
             swiftSettings: [.swiftLanguageMode(.v6)]
         ),
     ]
