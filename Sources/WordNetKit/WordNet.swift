@@ -32,11 +32,7 @@ public actor WordNet {
         if let databaseURL {
             url = databaseURL
         } else {
-            guard let bundled = Bundle.module.url(forResource: "wordnet", withExtension: "sqlite")
-            else {
-                throw WordNetError.databaseNotFound
-            }
-            url = bundled
+            throw WordNetError.databaseNotFound
         }
 
         let connection = try Connection(path: url.path)
