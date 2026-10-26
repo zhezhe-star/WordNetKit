@@ -12,7 +12,7 @@ let package = Package(
         .visionOS(.v1),
     ],
     products: [
-        .library(name: "WordNetKit", targets: ["WordNetKit"])
+        .library(name: "WordNetKit", type: .dynamic, targets: ["WordNetKit"])
     ],
     targets: [
         .target(
